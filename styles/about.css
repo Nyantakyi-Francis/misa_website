@@ -1,0 +1,250 @@
+:root {
+  --primary-blue: #2A5C99;
+  --secondary-blue: #1a3a6b;
+  --accent-orange: #FF7D33;
+  --light-gray: #f8f9fa;
+  --white: #ffffff;
+  --dark-text: #333333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+}
+
+body {
+  background-color: var(--light-gray);
+  color: var(--dark-text);
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* Header */
+header {
+  background-color: var(--white);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo img {
+  height: 2.5rem;
+}
+
+.logo-text h1 {
+  font-size: 1.25rem;
+  color: var(--primary-blue);
+  font-weight: 600;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  font-weight: 800;
+  transition: color 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+  color: var(--accent-orange);
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--primary-blue);
+  cursor: pointer;
+}
+
+/* About Header */
+.about-header {
+  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+  color: var(--white);
+  padding: 4rem 0;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.about-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Sections */
+.section-title {
+  color: var(--primary-blue);
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--accent-orange);
+}
+
+.mission-card,
+.membership-card,
+.leadership-card {
+  background-color: var(--white);
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.mission-item,
+.membership-item,
+.leadership-item {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.mission-item::before,
+.membership-item::before {
+  content: "•";
+  color: var(--accent-orange);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* Leadership Grid */
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.leader-card {
+  background-color: var(--light-gray);
+  padding: 1.5rem;
+  border-radius: 6px;
+  border-left: 4px solid var(--accent-orange);
+}
+
+.leader-title {
+  color: var(--primary-blue);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.leader-duties {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.leader-duties li {
+  margin-bottom: 0.3rem;
+  list-style: none;
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.leader-duties li::before {
+  content: "→";
+  color: var(--accent-orange);
+  position: absolute;
+  left: 0;
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  padding: 2rem 0;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-links a {
+  color: var(--white);
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--accent-orange);
+  transform: scale(1.1);
+}
+
+copyright {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--primary-blue);
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    display: none;
+    width: 100%;
+  }
+
+  .nav-links a {
+    color: var(--white);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .about-header h1 {
+    font-size: 2rem;
+  }
+
+  .leadership-grid {
+    grid-template-columns: 1fr;
+  }
+}
